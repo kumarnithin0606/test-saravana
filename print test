@@ -1,1 +1,102 @@
 i hope this is were i need to do my program
+import java.util.*;
+import java.util.Scanner;
+class Coin
+{
+    public static void main(String args[])
+       {
+            
+           
+                  
+                  int input[]={3,4,7,8,21,55,23};
+                  int total=100;
+                  
+                  
+                  int min=Integer.MAX_VALUE;
+                  int count=0;
+                  
+                  String str=new String();
+                                        
+                  String note=new String();
+                  
+                  for(int tm=0;tm<input.length;tm++)
+                     {
+                          int localtotal=total;
+                          int remain=0;
+                           int co=0;
+                           count=0;
+                        for(int tm1=(input.length-1)-tm;tm1>=0;tm1--)
+                        
+                           {             
+                           
+                           
+                                   co=localtotal/input[tm1];                                  
+                                          
+                                      remain=localtotal%input[tm1];
+                                      
+                                      localtotal =remain;
+                                        
+                                        
+                                        if(co!=0)
+                                        {
+                                         note=note+" "+input[tm1]+","+co+" ";
+                                     
+                                         count=count+co;
+                                        }
+                                        
+                                     
+                              
+                                       if(remain==0)
+                                          {
+                                     
+                                          break;
+                                          } 
+                                       
+                           
+                           
+                           }
+                     
+                      if(remain!=0)
+                         {
+                            note="";
+                            count=0;
+                         
+                         }
+                     
+                     else if (count<min)
+                       {
+                       
+                     
+                           min=count;
+                           str=note;
+                       
+                       
+                       }
+                       
+                       
+                       
+                       note="";
+                     
+                     
+                   
+                   
+                     }
+                  
+                  
+                  if(min==Integer.MAX_VALUE)
+                  {
+                     System.out.println("no output");
+                  }
+                else
+                     System.out.println(str+" ="+min);
+         
+                       
+       
+     
+       }
+
+
+
+
+
+}
